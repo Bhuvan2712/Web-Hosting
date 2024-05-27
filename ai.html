@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Chatbot Button Styles */
+        .chatbot-button {
+            background-color: #21265d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50px;
+            transition: transform 0.2s ease;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Chatbot Modal Styles */
+        .chatbot-modal {
+    display: none;
+    position: fixed;
+   
+    bottom: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 300px; /* Adjust width as needed */
+    max-width: calc(100% - 40px); /* Adjust to keep modal within viewport */
+    max-height: calc(100% - 40px); /* Adjust to keep modal within viewport */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+        .chatbot-modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 400px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Our Bhuvan's AI Web</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>In today's fast-paced world, managing appointments efficiently is crucial for businesses and individuals
+                alike. Traditional appointment scheduling methods often involve phone calls, emails, or manual entry
+                into
+                calendars, leading to potential errors and inefficiencies. However, with advancements in artificial
+                intelligence (AI) and chatbot technology, managing appointments has become more streamlined and
+                convenient
+                than ever before.</p>
+        </section>
+
+        <section>
+            <h2>AI Chatbot-Based Appointment Management System</h2>
+            <p>An AI chatbot-based appointment management system leverages natural language processing (NLP) and machine
+                learning algorithms to interact with users in a conversational manner. This system enables users to
+                schedule, reschedule, or cancel appointments seamlessly through a chat interface, eliminating the need
+                for
+                human intervention in routine scheduling tasks.</p>
+        </section>
+
+        <section>
+            <h2>Key Features</h2>
+            <ol>
+                <li>Natural Language Understanding (NLU)</li>
+                <li>Appointment Scheduling</li>
+                <li>Automated Reminders</li>
+                <li>Integration with Calendar Apps</li>
+                <li>Personalization</li>
+                <li>Multi-platform Accessibility</li>
+                <li>Security and Privacy</li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Our Website. All rights reserved.</p>
+    </footer>
+
+    <button class="chatbot-button" onclick="openChatBot()">Chat with AI</button>
+
+    <div id="chatbotModal" class="chatbot-modal">
+        <div class="chatbot-modal-content">
+            <span class="close" onclick="closeChatBot()">&times;</span>
+            <iframe src="https://cmeds2-dev--aira-xltvg8vq.web.app/" title="Chat Bot"></iframe>
+        </div>
+    </div>
+
+
+    <script>
+        function openChatBot() {
+            document.getElementById("chatbotModal").style.display = "block";
+        }
+
+        function closeChatBot() {
+            document.getElementById("chatbotModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById("chatbotModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
